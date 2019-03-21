@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/site_structure/css/styles.css">
+    <title>Read (All)</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-9">
+                <h1 class="thirtypxmargin">All Shows</h1>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Network</th>
+                                <th>Release Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for show in all_shows %}
+                            <tr>
+                                <td><a href="">{{ show.id }}</a></td>
+                                <td>{{ show.title }}</td>
+                                <td>{{ show.network }}</td>
+                                <td>{{ show.release_date }}</td>
+                                <td><a href="shows/{{ show.id }}">Show</a> | <a href="shows/{{ show.id }}/edit">Edit</a> | <a href="shows/delete/{{ show.id }}">Delete</a></td>
+                                <input type="hidden" name="id" value="{{ show.id }}">
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/shows/new">Add a New Show</a>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

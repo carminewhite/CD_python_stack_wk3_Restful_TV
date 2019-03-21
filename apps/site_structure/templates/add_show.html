@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/site_structure/css/styles.css">
+    <title>Read (All)</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-6">
+                <h1 class="thirtypxmargin">Add a New Show</h1>
+
+                <form method="POST", action="process">
+                    {% csrf_token %}
+
+                <p>Title</p>
+                <input type="text" name="title">
+                <p>Network</p>
+                <input type="text" name="network">
+                <p>Release Date</p>
+                <input type="date" name="release_date">
+                <p>Description</p>
+                <textarea name="description"></textarea>
+                <input type="submit" value="Create">
+                </form>
+            </div>
+            <div class="col">
+                <a href="/shows">Go Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
